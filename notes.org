@@ -1,0 +1,7 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+BEAMER_FRAME_LEVEL: 2
+
+* leet workbook for top 100 problems
+
+** [[https://cobalt-labs.workable.com/j/9033B2CAE4][leet]]
