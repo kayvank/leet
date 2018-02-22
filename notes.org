@@ -4,4 +4,4 @@
 
 * leet workbook for top 100 problems
 
-** [[https://cobalt-labs.workable.com/j/9033B2CAE4][leet]]
+** [[https://leetcode.com/problemset/top-100-liked-questions/][leet top 100]]
