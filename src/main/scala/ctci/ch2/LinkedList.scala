@@ -66,4 +66,23 @@ object LinkedList {
 
   def partition(input: List[Int], p: Int) : List[Int] = 
     input.filter(_ > p) ::: input.filter( _ <= p )
+
+  def sumList(l1: List[Int], l2: List[Int]): List[Int] = {
+    def helper(pairs: (List[Int], List[Int]),
+                carry: Int, res: List[Int]): List[Int] =
+      pairs match {
+        case ( (h1 :: t1), (h2 :: t2) ) ⇒
+          helper((t1, t2),(h1+h2+carry)/10, res ::: List((h1+h2+carry) % 10))
+        case ((h :: t), _)  if (h + carry)>9 ⇒
+          helper( (t, Nil), (h+carry)/10, res ::: List((h+carry) % 10))
+        case ((h :: t), _) ⇒ res ::: h+carry :: t
+        case (_, (h :: t))  if (h + carry)>9 ⇒
+          helper( (Nil, t), (h+carry)/10, res ::: List((h+carry) % 10))
+        case (_, (h :: t)) ⇒ res ::: h+carry :: t
+        case _ if carry > 0 ⇒ res ::: carry :: Nil
+      }
+    helper((l1,l2), 0, Nil) 
+  }
 }
+
+
