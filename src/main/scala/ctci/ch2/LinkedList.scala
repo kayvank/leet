@@ -1,5 +1,6 @@
 package ctci.ch2
 
+import scala.collection.mutable._
 
 object LinkedList {
   def removeDuplicates[T](l: List[T]): List[T] =
@@ -83,6 +84,28 @@ object LinkedList {
       }
     helper((l1,l2), 0, Nil) 
   }
+
+  def isPalindrome1[T](ls: List[T]): Boolean =
+    ls.foldLeft(List[T]()) ( (acc, curr) ⇒ curr :: acc ) == ls
+
+  def isPalindrome2[T](ls: List[T]): Boolean = ls.reverse == ls
+
+  def firstHalfReverse[T](ls: List[T]): List[T] = {
+    def helper(itPair:(Iterator[T], Iterator[T]),
+               store: List[T]): (List[T], Iterator[T]) =  {
+      if(itPair._2.hasNext)
+        itPair._2.next
+      else
+        return  (store, itPair._1)
+      if(itPair._2.hasNext) {
+        itPair._2.next
+        helper(itPair, itPair._1.next :: store )
+      }
+      else return (store,itPair._1)
+    }
+    helper(ls.toIterator.duplicate, List[T]())._1
+  }
+  def isPalindrome3[T](ls: List[T]): Boolean = {
+   true 
 }
-
-
+}

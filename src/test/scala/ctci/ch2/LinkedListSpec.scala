@@ -12,6 +12,8 @@ Cracking the code interview, chapter 2 linkeList
   find middle element event $e6  odd $e7
   partition list $e8
   sumList $e9
+  palindrome $e10
+  reverse 1/2 $e11
 """
   import LinkedList._
 
@@ -32,4 +34,11 @@ Cracking the code interview, chapter 2 linkeList
     computed must_== List(2,4,1,3)
     computed2 must_== List(2,4,1,0,1)
   }
+  def e10 ={
+    isPalindrome1[Int](List[Int](0,1,2,1,0)) must beTrue
+    isPalindrome2[Int](List[Int](0,1,2,1,0)) must beTrue
+    isPalindrome3[Int](List[Int](0,1,2,1,0)) must beTrue
+  }
+  def e11 = firstHalfReverse[Int](
+    List[Int](0,1,2,3,4)).toList must_== List(1,0)
 }
