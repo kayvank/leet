@@ -40,5 +40,5 @@ Cracking the code interview, chapter 2 linkeList
     isPalindrome3[Int](List[Int](0,1,2,1,0)) must beTrue
   }
   def e11 = firstHalfReverse[Int](
-    List[Int](0,1,2,3,4)).toList must_== List(1,0)
+    List[Int](0,1,2,0,1)).toList must_== List(1,0)
 }

@@ -17,6 +17,9 @@ object _Stack {
   }
 }
 
+/**
+ * design stack that has a min function
+ **/
 case class StackMin(
   store: List[(Int, Int)],  // use a case class instead of pair for clarity
   min: Int)
